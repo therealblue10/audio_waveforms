@@ -250,9 +250,7 @@ class PlayerController extends ChangeNotifier {
   /// otherwise nothing happens.
   Future<void> seekTo(int progress) async {
     if (progress < 0) return;
-    if (_playerState == PlayerState.playing) {
-      await AudioWaveformsInterface.instance.seekTo(playerKey, progress);
-    }
+    await AudioWaveformsInterface.instance.seekTo(playerKey, progress);
   }
 
   /// Release any resources taken by this controller. Disposing this
